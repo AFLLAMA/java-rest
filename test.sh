@@ -3,11 +3,10 @@ set -e
 
 # Compile
 echo "Compiling..."
-$HOME/.jdks/corretto-17.0.17/bin/javac -d out src/com/example/rest/*.java
-
+$JAVA_HOME/bin/javac -d out src/com/example/rest/*.java
 # Start server in background
 echo "Starting server..."
-$HOME/.jdks/corretto-17.0.17/bin/java -cp out com.example.rest.App &
+$JAVA_HOME/bin/java -cp out com.example.rest.App &
 SERVER_PID=$!
 
 # Wait for server to start
